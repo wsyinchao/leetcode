@@ -30,3 +30,9 @@
 *.exe
 *.out
 *.app
+
+#忽略.vs文件夹
+.vs/
+
+#忽略Debug文件夹
+Debug/
