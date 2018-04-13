@@ -11,16 +11,19 @@ public:
 	vector<int> twoSum(vector<int>& nums, int target) {
 		//the return value is usefully and let me expand
 		//good algorithm
-		std::map<int, int> nums_map;
-		for (int i = 0; i < nums.size(); i++) {
-			int comp = target - nums[i];
-
-			if (nums_map.find(comp) != nums_map.end())
-				return { nums_map[comp], i };
+		map<int, int> map_nums;
+		for (int i = 0; i < nums.size(); ++i)
+		{
+			int diff = target - nums[i];
+			if (map_nums.find(diff) != map_nums.end())
+			{
+				return { map_nums[diff], i };
+			}
 			else
-				nums_map[nums[i]] = i;
+			{
+				map_nums[nums[i]] = i;
+			}
 		}
-		return { 0, 0 };
 	}
 };
 
