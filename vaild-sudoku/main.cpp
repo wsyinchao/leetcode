@@ -21,25 +21,26 @@ using namespace std;
 class Solution {
 public:
 	bool isValidSudoku(vector<vector<char>>& board) {
-		//The other way to solve this.
-		vector<short> col(9, 0); //每一列 有九个数据，每一个数据是一个 short字节
-		vector<short> block(9, 0); //每一个小方块
-		vector<short> row(9, 0); //每一行
+		//重写了别人的方法
+		vector<short> row(9, 0);
+		vector<short> col(9, 0);
+		vector<short> block(9, 0);
 
-		for (int i = 0; i < 9; i++)
-			for (int j = 0; j < 9; j++) {
+		for (int i = 0; i < 9; ++i) {
+			for (int j = 0; j < 9; ++j) {
 				if (board[i][j] != '.') {
-					int idx = 1 << (board[i][j] - '0'); //这个地方有点技术。。。将不同的数字转换成对应在不同位上的 1.
-
-					//How the block[i / 3 * 3 + j / 3] works?
-					//将不同位置，但是在一个小方块中的保存在一起 
-					if (row[i] & idx || col[j] & idx || block[i / 3 * 3 + j / 3] & idx)
+					short index = 1 << (board[i][j] - '0');
+					if (row[i] & index || col[j] & index || block[i / 3 * 3 + j / 3]) {
 						return false;
-					row[i] |= idx;
-					col[j] |= idx;
-					block[i / 3 * 3 + j / 3] |= idx;
+					}
+
+					row[i] |= index;
+					col[j] |= index;
+					block[i / 3 * 3 + j / 3] |= index;
 				}
 			}
+		}
+
 		return true;
 	}
 };
