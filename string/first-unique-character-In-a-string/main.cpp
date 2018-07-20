@@ -3,6 +3,7 @@
 #include<string>
 #include<unordered_map>
 #include<list>
+#include<algorithm>
 
 using namespace std;
 
@@ -90,6 +91,25 @@ public:
 		}
 
 		return l.empty() ? -1 : l.front();
+
+		//The more best way.
+		//good algorithm.
+		//vector<int> v(26, -2);
+		//char ch;
+		//int ind;
+		//for (int i = 0; i < s.size(); ++i) {
+		//	ch = s[i];
+		//	ind = ch - 'a';
+
+		//	v[ind] = v[ind] == -2 ? i : -1;//If it has been repeated, set to -1
+		//}
+
+		//int ret = -1;
+		//for (auto x : v) {
+		//	ret = x >= 0 ? (ret >= 0 ? min(ret, x) : x) : ret;
+		//}
+
+		//return ret;
 	}
 };
 
@@ -98,6 +118,17 @@ int main()
 	string s("leetcode");
 	Solution so;
 	cout << so.firstUniqChar(s) << endl;
+
+	
+	//vector<int> pos(26, -2);
+	//for (int i = 0; i != s.size(); ++i)
+	//	pos[s[i]-'a'] = pos[s[i]-'a'] == -2 ? i : -1;//if it has been repeated, set the value to -1
+
+	//int res = -1;
+	//for (int x : pos)
+	//	res = x >= 0 ? (res >= 0 ? min(res, x): x) : res;
+	//return res;
+	
 
 	return 0;
 }
