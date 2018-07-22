@@ -2,12 +2,13 @@
 
 #include<string>
 #include<cctype>
+#include<cstdlib>
 
 using namespace std;
 
 class Solution {
 public:
-	int myAtoi(string str) {
+	int myAtoi2(string str) {
 		int i = 0;
 		int j = str.size();
 		while (i < j && str[i] == ' ') {//First discard as many whitespace characters as necessary until the first 
@@ -50,18 +51,22 @@ public:
 		ret = ret * syn;
 		return static_cast<int>(ret);
 	}
+
+	/*int myAtoi(string str) {
+		return atoi(str.c_str());
+	}*/
 };
 
 int main()
 {
 	Solution so;
-	/*cout << so.myAtoi("42") << endl;
+	cout << so.myAtoi("42") << endl;
 	cout << so.myAtoi("   -42") << endl;
 	cout << so.myAtoi("4193 words") << endl;
 	cout << so.myAtoi("words and 987") << endl;
 	cout << so.myAtoi("-91283472332") << endl;
 	cout << so.myAtoi("3.1415926") << endl;
-	cout << so.myAtoi("+3") << endl;*/
+	cout << so.myAtoi("+3") << endl;
 	cout << so.myAtoi("9223372036854775808") << endl;
 	return 0;
 }
