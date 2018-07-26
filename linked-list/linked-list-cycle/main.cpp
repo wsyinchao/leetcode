@@ -15,6 +15,14 @@ using namespace std;
 	The idea is to have two references to the list and move them difference speeds, move one by 1 node and the other by 2 node.
 	* If list have a loop they will definitely meet.
 	* Else either of them(or their next) will be NULL.
+
+	And How to prove it?
+	From stack overflow-->
+	Note that when both tortoise and hare in the cycle, their relative speed becomes 1, virtually hare chases standing tortoise with 
+	this speed.so hare will meet tortoise in N <= cycle's len steps.
+	You can replace "two steps" with "three steps", buy you have to check whether they meet at every hare substep
+
+	This question is first part of Floyd algorithm is cycle detection.
 */
 
 struct ListNode {
