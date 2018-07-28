@@ -1,12 +1,14 @@
 #include<iostream>
 
 #include<algorithm>
+#include<climits>
+#include<ctime>
 
 using namespace std;
 
 // Forward declaration of isBadVersion API.
 bool isBadVersion(int version) {
-	if (version == 1702766719) {
+	if (version > INT_MAX >> 1) {
 		return true;
 	}
 
@@ -17,11 +19,11 @@ class Solution {
 public:
 	int firstBadVersion(int n) {
 		//dichotomy search.
-		long long l = 1;
-		long long h = n;
+		int l = 1;
+		int h = n;
 
 		while (l < h) {
-			long long index = (l + h) / 2;
+			int index = l + ((h - l) >> 1);
 			if (isBadVersion(index)) {
 				h = max(index - 1, l);
 			}
@@ -44,7 +46,11 @@ public:
 int main()
 {
 	Solution so;
-	cout << so.firstBadVersion(2126753390) << endl;
+	for (int i = 0; i < 10000; ++i) {
+		//cout << so.firstBadVersion(INT_MAX) << endl; //linux 环境，速度快很多?....在
+		//so.firstBadVersion(INT_MAX);
+	}
+	cout << clock(); //15s
 
 	return 0;
 }
