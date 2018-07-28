@@ -1,5 +1,7 @@
 #include<iostream>
 
+#include<algorithm>
+
 using namespace std;
 
 // Forward declaration of isBadVersion API.
