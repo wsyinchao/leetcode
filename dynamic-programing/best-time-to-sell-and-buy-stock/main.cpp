@@ -9,24 +9,26 @@ using namespace std;
 class Solution {
 public:
 	int maxProfit(vector<int>& prices) {
-		int profit = 0;
-		int min_ = prices[0];
+		if (prices.size() == 0) {
+			return 0;
+		}
 
-		if (!prices.empty()) {
-			int len = prices.size();
-			int i = 0;
-			while (i < len) {
-				int diff = prices[i] - min_;
-				if (diff < 0) {
-					min_ = prices[i];
-				}
-				else if (profit < diff) {
-					profit = diff;
-				}
+		int profit = INT_MIN;
+		int smallestValley = prices[0];
+
+		int len = prices.size();
+		//The second number must be larger than the first one.
+		for (int i = 0; i < len; ++i) {
+			if (prices[i] < smallestValley) {
+				smallestValley = prices[i]; // find the smallest valley.
+			}
+
+			if (profit < prices[i] - smallestValley) {
+				profit = prices[i] - smallestValley;
 			}
 		}
 
-		return profit
+		return profit;
 	}
 };
 

@@ -8,6 +8,7 @@ class Solution {
 public:
 	//The brute force approach.
 	int maxSubArray(vector<int>& nums) {
+		//maintain two nums -- correspond to local optimal approach and global optimal approach.
 		int ret = nums.front();
 		int cur_num = nums.front();
 
@@ -19,10 +20,9 @@ public:
 		}
 
 		return ret;
-	}
 
-	//The another divide and conquer approach.
-	//to do...
+		//perfect..
+	}
 };
 
 int main()
