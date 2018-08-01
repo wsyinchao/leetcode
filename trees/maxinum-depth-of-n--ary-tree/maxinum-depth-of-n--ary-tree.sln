@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2000
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "maxinum-depth-of-n--ary-tree", "maxinum-depth-of-n--ary-tree.vcxproj", "{EC9FBA31-DAD7-413E-B80A-9C1B56EF816D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EC9FBA31-DAD7-413E-B80A-9C1B56EF816D}.Debug|x64.ActiveCfg = Debug|x64
+		{EC9FBA31-DAD7-413E-B80A-9C1B56EF816D}.Debug|x64.Build.0 = Debug|x64
+		{EC9FBA31-DAD7-413E-B80A-9C1B56EF816D}.Debug|x86.ActiveCfg = Debug|Win32
+		{EC9FBA31-DAD7-413E-B80A-9C1B56EF816D}.Debug|x86.Build.0 = Debug|Win32
+		{EC9FBA31-DAD7-413E-B80A-9C1B56EF816D}.Release|x64.ActiveCfg = Release|x64
+		{EC9FBA31-DAD7-413E-B80A-9C1B56EF816D}.Release|x64.Build.0 = Release|x64
+		{EC9FBA31-DAD7-413E-B80A-9C1B56EF816D}.Release|x86.ActiveCfg = Release|Win32
+		{EC9FBA31-DAD7-413E-B80A-9C1B56EF816D}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B5F60C93-9350-4808-8999-BD18A9A20840}
+	EndGlobalSection
+EndGlobal
