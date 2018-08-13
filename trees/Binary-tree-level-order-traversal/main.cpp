@@ -1,9 +1,9 @@
 #include<iostream>
 
 #include<vector>
+#include<queue>
 
 using namespace std;
-
 
 //Definition for a binary tree node.
  struct TreeNode {
@@ -19,19 +19,25 @@ public:
 
 	vector<vector<int>> levelOrder(TreeNode* root) {
 		//level order traversal
-		vector<int> ret;
-
-		if (root == NULL) return m_v;
-
-		ret.push_back(root->val);
-
-		m_v.push_back(ret);
-
-		if (root->left != NULL) {
-			levelOrder(root->left);
+		if (root == NULL) {
+			return m_v;
 		}
-		if (root->right != NULL) {
-			levelOrder(root->right);
+
+		queue<TreeNode*> q;
+		q.push(root);
+
+		while (!q.empty()) { //complete level order traversal. Now, we must to store every level of binary tree to m_v;
+			//each loop means operator for one nodes.
+			vector<int> tv;
+			int size = q.size();
+			for (int i = 0; i < size; ++i) {
+				TreeNode* tempNode = q.front();
+				q.pop();
+				tv.push_back(tempNode->val);
+				if (tempNode->left != NULL) q.push(tempNode->left);
+				if (tempNode->right != NULL) q.push(tempNode->right);
+			}
+			m_v.push_back(tv);
 		}
 
 		return m_v;
